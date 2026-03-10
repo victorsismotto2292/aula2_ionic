@@ -9,5 +9,23 @@ import { Component } from '@angular/core';
 export class HomePage {
 
   constructor() {}
+  linguagem='';
+  linguagemEscolhida='';
+  alertButtons = ['OK'];
+  
+  verificar(){
+    if(this.linguagem == 'c'){
+      this.linguagemEscolhida = 'C#';
+    }
+    else if(this.linguagem == 'python'){
+      this.linguagemEscolhida = 'Python';
+    }
+    else if(this.linguagem == 'java'){
+      this.linguagemEscolhida = 'Java';
+    }
+    else{
+      this.linguagemEscolhida='Cobol';
+    }
+  }
 
 }

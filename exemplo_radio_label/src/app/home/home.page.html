@@ -1,20 +1,27 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
+  <ion-toolbar color="light">
+    <ion-title color="primary" style="text-align: center;">
+      Aula 2 IONIC - Radio Label
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-alert
+  trigger="ver-linguagem"
+  header="Linguagem escolhida"
+  message={{linguagemEscolhida}}
+  [buttons]="alertButtons"
+></ion-alert>
+
+<ion-radio-group value="linguagem" [(ngModel)]="linguagem"><br><br>
+  <ion-radio value="c">C#</ion-radio><br><br>
+  <ion-radio value="python">Python</ion-radio><br><br>
+  <ion-radio value="Java">Java</ion-radio><br><br>
+  <ion-radio value="cobol">Cobol</ion-radio><br><br>
+</ion-radio-group>
+
+<ion-button expand="block" id="ver-linguagem" (click)="verificar()">Verificar</ion-button>
+
 </ion-content>
