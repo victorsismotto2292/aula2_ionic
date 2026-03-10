@@ -1,0 +1,7 @@
+{
+  "name": "exemplo_radio_label",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
