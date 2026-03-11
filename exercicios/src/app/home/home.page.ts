@@ -68,7 +68,7 @@ export class HomePage {
     else if(this.faixaPeso == '90kg+'){
       this.peso_aproximado = 100;
     }
-    else /* Caso dê erro */{
+    else /* Caso dê erro */ {
       this.res_ex2 = 'Erro, valor de campo não existe.';
       return;
     }
@@ -85,6 +85,43 @@ export class HomePage {
     }
     else{
       this.res_ex2 = `IMC: ${IMC.toFixed(2)}- Obesidade`
+    }
+  }
+
+  // EXERCÍCIO 3
+
+  v_inicial = '';
+  taxa = '';
+  periodoEscolhido = '';
+  res_ex3 = '';
+
+  Montante(){
+    const P = parseFloat(this.v_inicial);
+    const i = parseFloat(this.taxa) / 100; // Transformar em porcentagem
+
+    if(isNaN(P) || isNaN(i)){
+      this.res_ex3 = 'Por favor, digite os valores necessários em todos os campos.';
+      return;
+    }
+
+    if(this.periodoEscolhido == '6-meses'){
+      let n = 6;
+      const M = P*(1+i)**n;
+      this.res_ex3 = `${M.toFixed(2)} R$`;
+    }
+    else if(this.periodoEscolhido == '12-meses'){
+      let n = 12;
+      const M = P*(1+i)**n;
+      this.res_ex3 = `${M.toFixed(2)} R$`;
+    }
+    else if(this.periodoEscolhido == '24-meses'){
+      let n = 24;
+      const M = P*(1+i)**n;
+      this.res_ex3 = `${M.toFixed(2)} R$`;
+    }
+    else{
+      this.res_ex3 = 'Erro, valor de campo não existe.';
+      return;
     }
   }
 }

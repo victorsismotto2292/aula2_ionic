@@ -27,10 +27,10 @@
       <ion-radio value="PIX">PIX</ion-radio><br><br>
     </ion-radio-group>
 
-    <ion-button expand="block" id="ver-desconto" (click)="Desconto()">Calcular Desconto</ion-button>
+    <ion-button expand="block" id="ver-desconto" (click)="Desconto()">Calcular Desconto</ion-button><br>
   </div>
 
-  <ion-item-divider color="light"></ion-item-divider>
+  <ion-item-divider color="dark"></ion-item-divider>
 
   <div class="alert_ex2">
     <ion-alert
@@ -52,6 +52,31 @@
       <ion-radio value="90kg+">Acima de 90kg</ion-radio><br><br>
     </ion-radio-group>
 
-    <ion-button expand="block" id="ver-IMC" (click)="IMC()">Calcular IMC</ion-button>
+    <ion-button expand="block" id="ver-IMC" (click)="IMC()">Calcular IMC</ion-button><br>
+  </div>
+
+  <ion-item-divider color="dark"></ion-item-divider>
+
+  <div class="alert_ex3">
+    <ion-alert
+      trigger="ver-valor-final"
+      header="Valor final do investimento:"
+      message="{{res_ex3}}"
+      [buttons]="alertButtons"
+    ></ion-alert>
+  </div>
+
+  <div style="background-color: rgb(247, 210, 4); padding: 5px; display: flex; flex-wrap: wrap; flex-direction: column;">
+    <h1 style="text-align: center; font-size: 1.5rem;"><strong>Exercício 3</strong></h1>
+    <ion-input label="Digite o valor inicial investido" labelPlacement="floating" placeholder="Apenas números positivos" [(ngModel)]="v_inicial"></ion-input><br>
+    <ion-input label="Digite a taxa de juros mensais" labelPlacement="floating" placeholder="Apenas números" [(ngModel)]="taxa"></ion-input><br>
+    <ion-radio-group [(ngModel)]="periodoEscolhido">
+      <p>Selecione o tempo de aplicação</p>
+      <ion-radio value="6-meses">6 meses</ion-radio><br><br>
+      <ion-radio value="12-meses">12 meses</ion-radio><br><br>
+      <ion-radio value="24-meses">24 meses</ion-radio><br><br>
+    </ion-radio-group>
+    
+    <ion-button expand="block" id="ver-valor-final" (click)="Montante()">Calcular Montante</ion-button><br>
   </div>
 </ion-content>
